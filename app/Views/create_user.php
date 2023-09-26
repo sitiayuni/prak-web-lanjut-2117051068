@@ -15,8 +15,18 @@
             <input type="text" class="form-control" id="nama" name="nama" placeholder="masukkan nama Anda">
         </div>
         <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label">Kelas</label>
-            <input type="text" class="form-control" id="kelas" name="kelas" placeholder="masukan kelas Anda">
+            <label for="formGroupExampleInput3" class="form-label">Kelas</label>
+            <select name="kelas" id="kelas">
+                <?php
+                foreach ($kelas as $item) {
+                ?>
+                    <option value="<?= $item['id'] ?>">
+                        <?= $item['nama_kelas'] ?>
+                    </option>
+                <?php
+                }
+                ?>
+            </select>
         </div>
         <div class="mb-3">
             <label for="formGroupExampleInput3" class="form-label">NPM</label>
