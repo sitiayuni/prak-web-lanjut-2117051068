@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <img src="<?=base_url("assets/img/foto_Siti Ayuni.jpg")?>" alt="" width="200px">
-    <img ref="stylesheet" href="<?=base_url("assets/css/style.css")?>">
+    <link rel="stylesheet" href="<? base_url('assets/css/style.css') ?>">
+    <img src="<?= base_url("assets/img/foto_Siti Ayuni.jpg") ?>" alt="" width="200px">
+    <img ref="stylesheet" href="<?= base_url("assets/css/style.css") ?>">
 </head>
 
 <body>
@@ -16,6 +17,15 @@
             <b><a class="navbar-brand" href="#">Profile</a></b>
         </div>
     </nav>
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-md-3 text-center align-self-center">
+                <div class="alert alert-success" role="alert">
+                    Data Berhasil Ditambahkan
+                </div>
+            </div>
+        </div>
+    </div> -->
     <div style="text-align:center;">
         <img src="<?php echo base_url('img\foto_Siti Ayuni.jpg'); ?>" alt="fotoroy" style="height: 200px; width: 200px; border-radius: 50%; object-fit: cover; object-position: 0 -8px;" border="2px"><br>
         <b>
