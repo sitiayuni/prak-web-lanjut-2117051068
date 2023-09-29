@@ -23,7 +23,23 @@ class UserModel extends Model
     protected $deletedField  = 'deleted_at';
 
     // Validation
-    protected $validationRules      = [];
+    protected $validationRules      = [
+        'nama' => [
+            'rules' => 'required',
+            'errors' => [
+                'required' => '{field} Wajib Diisi *',
+            ]
+        ],
+        'npm' => [
+            'rules' => 'required|min_length[10]|is_unique[user.npm]|numeric',
+            'errors' => [
+                'required' => '{field} Wajib Diisi *',
+                'min_length' => '{field} harus 10 karakter',
+                'is_unique' => '{field} sudah',
+                'numeric' => '{field} tidak valid, hanya bilangan yang diperbolehkan'
+            ]
+        ]
+    ];
     protected $validationMessages   = [];
     protected $skipValidation       = false;
     protected $cleanValidationRules = true;
@@ -39,7 +55,8 @@ class UserModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function saveUser($data){
+    public function saveUser($data)
+    {
         $this->insert($data);
     }
 }

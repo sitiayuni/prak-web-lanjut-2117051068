@@ -62,6 +62,11 @@ class UserController extends BaseController
     {
         // dd($this->request->getVar());
         $userModel = new UserModel();
+
+        if (!$this->validate($userModel->getValidationRules())) {
+            session()->setFlashdata('errors', $this->validator->listErrors());
+            return redirect()->back()->withInput();
+        }
         $userModel->saveUser([
             'nama' => $this->request->getVar('nama'),
             'id_kelas' => $this->request->getVar('kelas'),
